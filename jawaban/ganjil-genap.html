@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Cek Bilangan Ganjil/Genap</title>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+  <div class="text-center">
+    <h1 class="text-3xl font-semibold mb-6">Cek Bilangan Ganjil/Genap</h1>
+    <input
+      id="numberInput"
+      type="number"
+      class="border rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500"
+      placeholder="Masukkan angka"
+    />
+    <button
+      id="checkButton"
+      class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300"
+    >
+      Cek
+    </button>
+    <p id="result" class="mt-4 font-semibold"></p>
+    
+    <button
+      id="backButton"
+      class="mt-4 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition duration-300"
+    >
+      Kembali
+    </button>
+  </div>
+
+  <script>
+    const checkButton = document.getElementById('checkButton');
+    const resultElement = document.getElementById('result');
+    const backButton = document.getElementById('backButton');
+
+    checkButton.addEventListener('click', () => {
+      const numberInput = document.getElementById('numberInput').value;
+      if (numberInput === '') {
+        resultElement.textContent = 'Masukkan angka terlebih dahulu.';
+      } else {
+        const number = parseInt(numberInput);
+        if (isNaN(number)) {
+          resultElement.textContent = 'Masukkan angka yang valid.';
+        } else {
+          if (number % 2 === 0) {
+            resultElement.textContent = `${number} adalah bilangan genap.`;
+          } else {
+            resultElement.textContent = `${number} adalah bilangan ganjil.`;
+          }
+        }
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.location.href = '../index.html';
+    });
+  </script>
+</body>
+</html>

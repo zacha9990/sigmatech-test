@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Grafik Data Penduduk DKI Jakarta</title>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+  <div class="text-center">
+    <h1 class="text-3xl font-semibold mb-6">Grafik Data Penduduk DKI Jakarta</h1>
+    <canvas id="populationChart" width="400" height="200"></canvas>
+      <button
+      id="backButton"
+      class="mt-4 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition duration-300"
+    >
+      Kembali
+    </button>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('populationChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['0-4', '5-9', '10-14', '15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60-64', '65+'],
+        datasets: [
+          {
+            label: 'Laki-laki',
+            data: [453157, 478490, 404210, 362525, 362699, 445352, 515860, 501470, 439041, 371257, 307256, 239492, 175601, 228911],
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          },
+          {
+            label: 'Perempuan',
+            data: [435687, 462403, 380844, 357569, 393490, 483771, 507359, 482121, 422799, 359079, 302979, 246068, 183612, 254708],
+            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            stacked: true
+          },
+          y: {
+            stacked: true
+          }
+        }
+      }
+    });
+
+    const backButton = document.getElementById('backButton');
+    backButton.addEventListener('click', () => {
+      window.location.href = '../index.html'; // Replace with your actual index.html path
+    });
+  </script>
+</body>
+</html>
