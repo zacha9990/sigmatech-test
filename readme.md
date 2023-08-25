@@ -1,32 +1,3 @@
-```markdown
-# Project README
-
-This project showcases three functionalities:
-1. Button to navigate to a page for determining odd or even numbers.
-2. Button to display a map of West Jakarta using OpenLayers.
-3. Button to display a chart representing the population of Jakarta using Chart.js.
-
-## Prerequisites
-
-- Web server environment (e.g., XAMPP) to avoid CORS issues when loading JSON files.
-
-## Getting Started
-
-1. Clone this repository to your local machine:
-
-```sh
-git clone https://github.com/zacha9990/sigmatech-test.git
-```
-
-2. Set up a web server environment (e.g., XAMPP) and copy the repository folder into the server's root directory (e.g., `htdocs` in XAMPP).
-
-3. Start your web server.
-
-4. Access the project using a web browser by navigating to:
-
-```
-http://localhost/your-repo-folder/
-```
 
 ## Features
 
